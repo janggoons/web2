@@ -8,8 +8,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mode:'read',
-      selected_content_id: 2,
+      mode:'welcome',
+      selected_content_id: 0,
       subject:{title:'WEB', sub:'World Wide Web!'},
       welcome:{title:'Welcome', desc:'Hello, React!!'},
       contents:[
@@ -36,8 +36,7 @@ class App extends Component {
         }
         i = i + 1;
       }      
-    }
-    console.log("render", this);
+    }    
     return (
       <div className='App'>        
         <Subject 
@@ -46,8 +45,7 @@ class App extends Component {
           onChangePage={function() {
             this.setState({mode: 'welcome'});
           }.bind(this)}></Subject>        
-        <TOC onChangePage={function(id){
-          //debugger;
+        <TOC onChangePage={function(id){          
           this.setState({
             mode: 'read',
             selected_content_id: Number(id)

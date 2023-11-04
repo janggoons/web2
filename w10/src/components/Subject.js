@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class Subject extends Component {
-  render() {    
+  render() {
     return (
       <header>
       <h1><a href="/" onClick={function(e){
@@ -9,9 +9,10 @@ class Subject extends Component {
         this.props.onChangePage();
       }.bind(this)}>{this.props.title}</a></h1>
       {this.props.sub}
-    </header>
+      </header>
     );
   }  
 }
 
 export default Subject;
+
